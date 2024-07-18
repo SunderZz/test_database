@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "main.py",
+        "use": "@vercel/python",
+        "config": {
+          "runtime": "python3.9"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/*",
+        "dest": "main.py"
+      }
+    ],
+    "env": {
+      "SQLALCHEMY_DATABASE_URL": "${DATABASE_URL}"
+    }
+  }
